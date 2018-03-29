@@ -35,7 +35,8 @@ class Object extends java.lang.Object //
         return super.equals(obj);
     }
     // protected native java.lang.Object clone() throws CloneNotSupportedException;
-    // thread
+
+    /* thread */
     // public final native void notify();
     // public final native void notifyAll();
     // public final native void wait(long timeout) throws InterruptedException;
@@ -44,14 +45,11 @@ class Object extends java.lang.Object //
     protected void finalize() throws Throwable { } // 结束
 
     // 继承实现
-    public Object clone()throws CloneNotSupportedException{
-        return new Object();
-    }
-
+    public Object clone()throws CloneNotSupportedException{return new Object();}
     /*
     private static native void registerNatives();
     static { registerNatives(); }
-     */
+    */
 
     public static void main(java.lang.String[] args)
     {

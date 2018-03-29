@@ -53,7 +53,7 @@ public class LanguageStatement
      *  单目：+（取正）-（取负） ++（自增） - -（自减）
      *  双目：+ - * / %（取余）
      *  三目：a>b?true:false
-     * 关系运算符: ＞ ＜ ＞= ＜= == !=
+     * 关系运算符: ＞ ＜ ＞= ＜= == != |= 
      * 位运算符: &(与) ~(非) |(或) ^(异或)
      * 位移: <<(带符号左移) >>(带符号右移) >>>(无符号右移)
      * 逻辑运算符: &&(与) !(非) ||(或)
@@ -91,3 +91,6 @@ public class LanguageStatement
         System.out.print("JAVA LanguageStatement\\LanguageStatement\n");
     }
 }
+/**
+ * 1，private 不限制同类内部方法调用（@see java.lang.Boolean.compareTo(Boolean b)）
+ */

@@ -1,5 +1,6 @@
-package language.data;
+package language.data.string;
 
+import java.io.ObjectStreamField;
 import java.io.UnsupportedEncodingException;
 import java.lang.Object;
 import java.nio.charset.Charset;
@@ -7,37 +8,45 @@ import java.lang.StringBuilder;
 import java.util.Locale;
 import java.util.stream.IntStream;
 
-class String //implements java.io.Serializable, Comparable<java.lang.String>, CharSequence
+/**
+ * 字符型常量:
+ *  字符型常量是用单引号括起来的一个字符，如'a'、'A'。
+ *  Java提供的转义字符，以反斜杠（\）开头(它表示Unicode集，而不仅仅是ASCII集):
+ *      \ddd    1到3位8进制数据所表示的字符(ddd)
+ *      \udddd  1到4位16进制数所表示的字符(dddd)
+ *      \'      单引号字符
+ *      \\      反斜杠字符
+ *      \r      回车
+ *      \n      换行
+ *      \f      走纸换页
+ *      \t      横向跳格
+ *      \b      退格
+ * 字符型变量:
+ *  字符型变量的类型为char，它在机器中占16位，其范围为0～65535。
+ * 字符串常量
+ *  Java的字符串常量是用双引号括起来的一串字符，如"Hello world!\n"。
+ *  Java中的字符串常量是作为String类的一个对象(String类提供了很多方便的对字符串操作的方法。)。
+ *
+ *  public char c = 'a';//指定变量c为char型，且赋初值为'a'
+ *  public char chars[]={'a','b','c'};
+ *  String s=new String(chars);
+ * @see java.lang.String
+ */
+class String implements java.io.Serializable, Comparable<java.lang.String>, CharSequence
 {
-    /**
-     * 字符型常量:
-     *  字符型常量是用单引号括起来的一个字符，如'a'、'A'。
-     *  Java提供的转义字符，以反斜杠（\）开头(它表示Unicode集，而不仅仅是ASCII集):
-     *      \ddd    1到3位8进制数据所表示的字符(ddd)
-     *      \udddd  1到4位16进制数所表示的字符(dddd)
-     *      \'      单引号字符
-     *      \\      反斜杠字符
-     *      \r      回车
-     *      \n      换行
-     *      \f      走纸换页
-     *      \t      横向跳格
-     *      \b      退格
-     * 字符型变量:
-     *  字符型变量的类型为char，它在机器中占16位，其范围为0～65535。
-     */
-    public char c = 'a';//指定变量c为char型，且赋初值为'a'
-    public char chars[]={'a','b','c'};
-    java.lang.String s=new java.lang.String(chars);
 
-    /**
-     * 字符串常量
-     *  Java的字符串常量是用双引号括起来的一串字符，如"Hello world!\n"。
-     *  Java中的字符串常量是作为String类的一个对象(String类提供了很多方便的对字符串操作的方法。)。
-     */
+    //private final byte[] value;
+    //private final byte coder;
+    private int hash; // Default to 0
+    private static final long serialVersionUID = -6849794470754667710L;
+    static final boolean COMPACT_STRINGS;
+    static { COMPACT_STRINGS = true; }
+    private static final ObjectStreamField[] serialPersistentFields = new ObjectStreamField[0];
+
     public java.lang.String string = "";
 
     // 构造
-    public java.lang.String String() { return new java.lang.String();}
+    public java.lang.String String() { return string;}
     public java.lang.String String(char value[]) { return new java.lang.String(value);}
     public java.lang.String String(char value[], int offset, int count) { return new java.lang.String(value,offset,count);}
     public java.lang.String String(byte ascii[], int hibyte){ return new java.lang.String(ascii,hibyte); }
@@ -95,7 +104,7 @@ class String //implements java.io.Serializable, Comparable<java.lang.String>, Ch
     public int offsetByCodePoints(int index, int codePointOffset){ return string.offsetByCodePoints(index,codePointOffset); }
     public java.lang.String substring(int beginIndex){return string.substring(beginIndex);}
     public java.lang.String substring(int beginIndex, int endIndex){return string.substring(beginIndex,endIndex);}
-    public CharSequence subSequence(int beginIndex, int endIndex){return string.subSequence(beginIndex,endIndex);}
+    public java.lang.CharSequence subSequence(int beginIndex, int endIndex){return string.subSequence(beginIndex,endIndex);}
     public java.lang.String concat(java.lang.String str) {return string.concat(str);}
     public java.lang.String trim() {return string.trim();}
     // 正则 替换 匹配
