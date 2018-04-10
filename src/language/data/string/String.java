@@ -32,7 +32,7 @@ import java.util.stream.IntStream;
  *  String s=new String(chars);
  * @see java.lang.String
  */
-class String implements java.io.Serializable, Comparable<java.lang.String>, CharSequence
+class /* final */ String implements java.io.Serializable, Comparable<java.lang.String>, CharSequence
 {
 
     //private final byte[] value;
@@ -59,8 +59,8 @@ class String implements java.io.Serializable, Comparable<java.lang.String>, Char
     public java.lang.String String(byte bytes[], java.lang.String charsetName)throws UnsupportedEncodingException{return new java.lang.String(bytes,charsetName);}
     public java.lang.String String(java.lang.String original) { return new java.lang.String(original); }
     public java.lang.String String(int codePoints[], int offset, int count) { return new java.lang.String(codePoints,offset,count); }
-    public java.lang.String String(StringBuffer buffer){return new java.lang.String(buffer);}
-    public java.lang.String String(StringBuilder builder){return new java.lang.String(builder);}
+    public java.lang.String String(java.lang.StringBuffer buffer){return new java.lang.String(buffer);}
+    public java.lang.String String(java.lang.StringBuilder builder){return new java.lang.String(builder);}
 
     // 长度
     public int length(){ return string.length(); }// 字符串的长度
@@ -80,7 +80,7 @@ class String implements java.io.Serializable, Comparable<java.lang.String>, Char
     // 比较
     public boolean equals(Object anObject) {return string.equals(anObject);}
     public boolean contentEquals(CharSequence sb){return string.contentEquals(sb);}
-    public boolean contentEquals(StringBuffer sb){return string.contentEquals(sb);}
+    public boolean contentEquals(java.lang.StringBuffer sb){return string.contentEquals(sb);}
     public boolean equalsIgnoreCase(java.lang.String anotherString){return string.equalsIgnoreCase(anotherString);}
     public int compareTo(java.lang.String anotherString){return string.compareTo(anotherString);}
     public int compareToIgnoreCase(java.lang.String str){return string.compareToIgnoreCase(str);}

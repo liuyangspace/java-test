@@ -1,6 +1,6 @@
 package language.data.number;
 
-import jdk.internal.math.FloatingDecimal;
+//import jdk.internal.math.FloatingDecimal;
 
 import java.lang.Byte;
 import java.lang.Number;
@@ -34,7 +34,7 @@ public /* final */ class Double extends Number implements Comparable<Double>
         return toString(value);
     }
     public static String toString(double d) {
-        return FloatingDecimal.toJavaFormatString(d);
+        return java.lang.Double.toString(d);
     }
     public static String toHexString(double d) {return java.lang.Double.toHexString(d);}
     public static java.lang.Double valueOf(String s) throws NumberFormatException { return new java.lang.Double(parseDouble(s)); }
@@ -42,7 +42,7 @@ public /* final */ class Double extends Number implements Comparable<Double>
         return new Double(d);
     }
 
-    public static double parseDouble(String s) throws NumberFormatException { return FloatingDecimal.parseDouble(s); }
+    public static double parseDouble(String s) throws NumberFormatException { return java.lang.Double.parseDouble(s); }
 
     public boolean isNaN() {
         return isNaN(value);

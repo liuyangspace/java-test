@@ -1,4 +1,4 @@
-package language.data.string;
+package language.data.string.inside;
 
 /**
  * @see java.lang.CharacterData
@@ -46,4 +46,5 @@ abstract class CharacterData // implements java.lang.CharacterData
     // Note: performance of this "fast-path" code may be sub-optimal
     // in negative cases for some accessors due to complicated ranges.
     // Should revisit after optimization of table initialization.
+
 }

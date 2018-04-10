@@ -74,14 +74,17 @@ public class LanguageStatement
 
     /**
      * 声明：
-     *      boolean,byte,char,double,float,int,long,short,null
-     *      package,interface,abstract,class,enum
-     *      super,this,true,false,void
-     *      import,extends,implements
+     *      boolean , byte , char , double , float , int , long , short
+     *      class , enum , null
+     *      package , interface , abstract
+     *      [ParentClass.]super , this
+     *      true , false , void
+     *      import[ static] , extends , implements
+     *      module , exports[ to] , uses , requires , package , provides[ with]
      * 修饰符:
-     *      public,private,protected,
-     *      native(本地),static,final
-     *      strictfp(严格遵守FP-strict),transient(暂时的,非序列化的),volatile(多线程共享),synchronized(同步锁),
+     *      public , private , protected
+     *      native(本地) , static , final
+     *      strictfp(严格遵守FP-strict) , transient(暂时的,非序列化的) , volatile(多线程共享) , synchronized(同步锁)
      * @ 符：注解（错误检查，及屏蔽）
      * 保留字：goto,const
      */
@@ -93,4 +96,13 @@ public class LanguageStatement
 }
 /**
  * 1，private 不限制同类内部方法调用（@see java.lang.Boolean.compareTo(Boolean b)）
+ * 2,java8 lambda （定义方法类型接口内的方法）:
+ *      声明：interface interfaceName { type methodName(type args...); }
+ *      使用：( [ [Type] params] [,]) -> [{] [return] statements [}] [;]
+ * 3,Java 8 方法引用( 指向方法的引用 ):
+ *      声明：public interface java.util.function.Supplier<T> { T get(); }
+ *      使用：Class::[new|method]
+ * 4,Java 8 Stream( 集合处理 ):
+ *      Collection.stream().forEach().map().filter().limit().sorted()
+ *      Collection.parallelStream().count().collect()
  */

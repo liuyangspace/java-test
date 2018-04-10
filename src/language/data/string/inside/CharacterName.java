@@ -1,4 +1,4 @@
-package language.data.string;
+package language.data.string.inside;
 
 import java.lang.ref.SoftReference;
 
