@@ -55,7 +55,7 @@ public abstract class Enum<E extends Enum<E>> implements Comparable<E>, Serializ
 
 /* e.g:
 
-public enum Enum
+public enum Enum [ implements InterfaceName ]
 {
     RED("红色", 1), GREEN("绿色", 2), BLANK("白色", 3), YELLO("黄色", 4);
     // 成员变量

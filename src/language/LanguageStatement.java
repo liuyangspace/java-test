@@ -15,6 +15,7 @@ package language;
  *  JSR(Java Specification Requests,Java 规范提案)
  *  JCP(Java Community Process,Java开发者以及被授权者组成，职能是发展和更新)
  *  DLL(Dynamic Link Library（动态链接库）)
+ *  NaN(Not a Number,无穷与非数值,在IEEE浮点数算术标准（IEEE 754）中定义)
  * Java的应用:
  *  Applet: Applet是嵌入到网页里用于装饰网页或者完成某种特殊功能的小应用程序。Applet由浏览器中的Java解释器负责解释执行。
  *  Application: Java Application就是独立运行在Java虚拟机上的一系列的应用程序。
