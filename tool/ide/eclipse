@@ -1,0 +1,25 @@
+
+eclipse
+home:https://www.eclipse.org/downloads/
+
+1,扩展使用自定义模板：Templates
+    Window / Preference / Java /  Editor / Templates
+2,快捷键的配置，常用快捷键：
+    内容提示(Content Assist)：Alt + /
+    快速修复(Quick Fix)：Ctrl + 1
+    导包：ctrl + shift + O
+    格式化代码块：ctrl + shift + F  ---> 配置代码自动格式化
+    添加(除去)块注释 Ctrl+Shift+/ (Ctrl+Shift+\)
+    添加(除去)单行注释 Ctrl+/
+    移动代码：选中行 alt+上/下
+    删除行：ctrl+D
+    查看方法说明：F2
+    查看源代码：F3
+    重置透视图 window / Reset Perspective
+    更改为大写 Ctrl+Shift+X
+    更改为小写 Ctrl+Shift+Y
+    复制行 Ctrl+Alt+向下键查看类 ctrl+shift+T
+    查看指定行：chrl + L
+    显示行号：页面左边--右键 / show line numbers
+    自动填充本地变量：ctrl+2,L quick assist (Assign to local variable)
+    内容提示失效：windows/preferences/java/editor/ content assist/advanced – restore defaults
