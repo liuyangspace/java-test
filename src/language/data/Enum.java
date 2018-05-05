@@ -31,6 +31,14 @@ public enum Enum [ implements InterfaceName ]
 */
 
 /**
+ *
+ * This is the common base class of all Java language enumeration types.
+ *
+ * 枚举的基类，类似于多例
+ * 使用 enum 定义的枚举类默认继承了 java.lang.Enum 类
+ * 枚举类成员默认使用 public static final 修饰
+ * 枚举类也可以实现接口、或继承抽象类。
+ *
  * @see java.lang.Enum;
  */
 

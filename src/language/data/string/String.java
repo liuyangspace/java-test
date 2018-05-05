@@ -93,7 +93,7 @@ class /* final */ String implements java.io.Serializable, Comparable<java.lang.S
     public boolean endsWith(java.lang.String suffix){return string.endsWith(suffix);}
     // 摘要
     public int hashCode(){return string.hashCode();}
-    // 截取 转换 剪切
+    // 截取 转换(字节) 剪切
     public void getChars(int srcBegin, int srcEnd, char dst[], int dstBegin){ string.getChars(srcBegin,srcEnd,dst,dstBegin); }//
     public void getBytes(int srcBegin, int srcEnd, byte dst[], int dstBegin){ string.getBytes(srcBegin,srcEnd,dst,dstBegin); }//
     public byte[] getBytes(java.lang.String charsetName)throws UnsupportedEncodingException {return string.getBytes(charsetName);}

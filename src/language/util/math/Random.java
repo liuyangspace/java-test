@@ -27,12 +27,12 @@ public class Random extends java.util.Random implements java.io.Serializable
     public Random() { super(); }
     public Random(long seed) {super(seed);}
     public synchronized void setSeed(long seed) {setSeed(seed);}
-    protected int next(int bits) {return super.next(bits);}
+    protected int next(int bits) {return super.next(bits);}//  如果用相同的种子创建两个 Random 实例，则对每个实例进行相同的方法调用序列，它们将生成并返 回相同的数字序列。
     public void nextBytes(byte[] bytes) { super.nextBytes(bytes);}
     public int nextInt() {
         return next(32);
-    }
-    public int nextInt(int bound) {return nextInt(bound);}
+    }// 随机范围 0 ~ 2^32-1
+    public int nextInt(int bound) {return nextInt(bound);}//随机范围 0 ~ bound-1
     public long nextLong() {return nextLong();}
     public boolean nextBoolean() {
         return next(1) != 0;
@@ -46,8 +46,8 @@ public class Random extends java.util.Random implements java.io.Serializable
     public synchronized double nextGaussian() {return nextGaussian();}
     public IntStream ints(long streamSize) {return super.ints(streamSize);}
     public IntStream ints() {return super.ints();}
-    public IntStream ints(long streamSize, int randomNumberOrigin, int randomNumberBound) {return super.ints(streamSize,randomNumberOrigin,randomNumberBound);}
-    public IntStream ints(int randomNumberOrigin, int randomNumberBound) {return super.ints(randomNumberOrigin,randomNumberBound);}
+    public IntStream ints(long streamSize, int randomNumberOrigin, int randomNumberBound) {return super.ints(streamSize,randomNumberOrigin,randomNumberBound);}//随机 streamSize 个 randomNumberOrigin ~ randomNumberBound-1 的数
+    public IntStream ints(int randomNumberOrigin, int randomNumberBound) {return super.ints(randomNumberOrigin,randomNumberBound);}//随机范围 randomNumberOrigin ~ randomNumberBound-1
     public LongStream longs(long streamSize) {return super.longs(streamSize);}
     public LongStream longs() {return super.longs();}
     public LongStream longs(long streamSize, long randomNumberOrigin, long randomNumberBound) {return super.longs(streamSize,randomNumberOrigin,randomNumberBound);}

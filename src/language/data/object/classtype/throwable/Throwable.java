@@ -7,6 +7,11 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ *
+ * java中的异常分为两大类，强制性异常(CheckedException)和非强制性异常(UncheckedException)。而java中除了RuntimeException外，都是强制性异常。
+ *
+ * 强制性异常：所谓强制性异常就是在编写程序的过程中必需在抛出异常的部分try catch  或者向上throws异常。
+ * 非强制性异常：所谓非强制性异常就和上面相反了。不过你当然也可以try catch或者thows，只不过这不是强制性的。
  * The {@code Throwable} class is the superclass of all errors and
  * exceptions in the Java language.
  *

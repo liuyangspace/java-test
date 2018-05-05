@@ -39,7 +39,7 @@ public abstract class ClassLoader extends java.lang.ClassLoader
     }
     protected Enumeration<URL> findResources(String name) throws IOException { return Collections.emptyEnumeration();}
     protected URL findResource(String moduleName, String name) throws IOException {return super.findResource(moduleName,name);}
-    public URL getResource(String name) {return super.getResource(name);}
+    public URL getResource(String name) {return super.getResource(name);}//类加载时的目录
     public Enumeration<URL> getResources(String name) throws IOException {return super.getResources(name);}
     public static URL getSystemResource(String name) {
         return getSystemClassLoader().getResource(name);
@@ -58,11 +58,11 @@ public abstract class ClassLoader extends java.lang.ClassLoader
     public void clearAssertionStatus() {super.clearAssertionStatus();}
     /** 模块 包 */
     // public final Module getUnnamedModule() { return unnamedModule; }
-    protected Package definePackage(String name, String specTitle, String specVersion, String specVendor, String implTitle, String implVersion, String implVendor, URL sealBase)
+    protected java.lang.Package definePackage(String name, String specTitle, String specVersion, String specVendor, String implTitle, String implVersion, String implVendor, URL sealBase)
     {return super.definePackage(name,specTitle,specVersion,specVendor,implTitle,implVersion,implVendor,sealBase);}
     // public final Package getDefinedPackage(String name) {return super.getDefinedPackage(name);} return packages().toArray(Package[]::new); }
-    protected Package getPackage(String name) {return super.getPackage(name);}
-    protected Package[] getPackages() {return super.getPackages();}
+    protected java.lang.Package getPackage(String name) {return super.getPackage(name);}
+    protected java.lang.Package[] getPackages() {return super.getPackages();}
 
     protected String findLibrary(String libname) {
         return null;
@@ -102,7 +102,7 @@ public abstract class ClassLoader extends java.lang.ClassLoader
     {
         System.out.println(java.lang.ClassLoader.getPlatformClassLoader());
         try {
-            System.out.println(java.lang.ClassLoader.getSystemClassLoader().loadClass("language.data.object.classtype.Class"));
+            System.out.println(java.lang.ClassLoader.getSystemClassLoader().loadClass("language.data.object.classtype.reflect.Class"));
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

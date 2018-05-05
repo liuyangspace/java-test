@@ -4,6 +4,8 @@ import java.lang.CharSequence;
 import java.lang.String;
 
 /**
+ * 多线程安全的 可变长度的 字符串（相对于 {@link java.lang.String} 字符串变动资源开销小 ）
+ *
  * @see java.lang.StringBuffer
  */
 public /* final */ class StringBuffer /* extends AbstractStringBuilder */ implements java.io.Serializable, CharSequence

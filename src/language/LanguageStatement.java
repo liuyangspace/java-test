@@ -71,8 +71,8 @@ public class LanguageStatement
     // 注释语句
     // //用于单行注释。
     // /*…*/用于多行注释。注释从/*开始，到*/结束。
-    // /**…*/是Java所特有的doc注释。注释从/**开始，到*/结束。在JDK中有javadoc的工具，通过这个工具可以由这些注释生成HTML形式的帮助文件。
 
+    // /**…*/是Java所特有的doc注释。注释从/**开始，到*/结束。在JDK中有javadoc的工具，通过这个工具可以由这些注释生成HTML形式的帮助文件。
     /**
      * 声明：
      *      boolean , byte , char , double , float , int , long , short
@@ -87,6 +87,7 @@ public class LanguageStatement
      *      native(本地) , static , final
      *      strictfp(严格遵守FP-strict) , transient(暂时的,非序列化的) , volatile(多线程共享) , synchronized(同步锁)
      * @ 符：注解（错误检查，及屏蔽）
+     * ... : 可变数量参数，例：public static void dealArray(int... intArray) {}
      * 保留字：goto,const
      */
 
@@ -97,6 +98,7 @@ public class LanguageStatement
 }
 /**
  * 1，private 不限制同类内部方法调用（@see java.lang.Boolean.compareTo(Boolean b)）
+ *    匿名内部类:new 类名(){方法定义}
  * 2,java8 lambda （定义方法类型接口内的方法）:
  *      声明：interface interfaceName { type methodName(type args...); }
  *      使用：( [ [Type] params] [,]) -> [{] [return] statements [}] [;]
@@ -106,4 +108,8 @@ public class LanguageStatement
  * 4,Java 8 Stream( 集合处理 ):
  *      Collection.stream().forEach().map().filter().limit().sorted()
  *      Collection.parallelStream().count().collect()
+ *
+ * 5,静态导包: import static
+ *      导入类内的静态成员（属性或方法），导入后可直接引用（不须标明类）
+ * 6,自动装箱
  */
