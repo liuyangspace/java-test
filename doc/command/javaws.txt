@@ -1,0 +1,19 @@
+javaws
+    用法: javaws [运行选项] <jnlp-file>
+          javaws [控制选项]
+
+    其中运行选项包括：
+     -verbose       显示其他输出内容
+     -offline       以脱机模式运行应用程序
+     -system        仅从系统高速缓存运行应用程序
+     -Xnosplash     运行时不显示启动程序
+     -J<option>     为VM提供选项
+     -wait          启动Java进程并等待其退出
+     -open <arg>    将jnlp-file中的参数替换为 -open <arg>
+     -print <arg>   将jnlp-file中的参数替换为 -print <arg>
+
+    控制选项包括：
+     -viewer        在Java控制面板中显示高速缓存查看器
+     -userConfig <name> 清除指定的部署属性
+     -userConfig <name> <value> 设置指定的部署属性
+     -clearcache
