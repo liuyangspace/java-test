@@ -1,2 +1,3 @@
 ./src:
-    openjdk源码:http://hg.openjdk.java.net/jdk8u/jdk8u/jdk/file/656ab3b39178
+    openjdk源码 : http://hg.openjdk.java.net/jdk8u/jdk8u/jdk/file/656ab3b39178
+    jdk部分源码 : %JAVA_HOME%/lib/src.zip

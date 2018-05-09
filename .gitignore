@@ -27,7 +27,8 @@ hs_err_pid*
 /task.txt
 /local
 /out
+/lib
 /.gitignore
 
-/doc/manual
-/kernel/src
+/doc/manual/
+/kernel/src/

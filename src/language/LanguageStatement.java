@@ -2,20 +2,6 @@ package language;
 
 /**
  * Link: http://java.sun.com
- * KeyWorlds:
- *  JDK（Java Development Kit）
- *  JRE（Java Runtime Environment)
- *  JVM(Java Virtual Machine（Java虚拟机）)(虚机器码（Virtual Machine Code）)
- *  J2SE（Java 2 Standard Edition）
- *  J2EE（Java 2 Enterprise Edition）
- *  J2ME（Java 2 Micro Edition）
- *  JNI（Java Native Interface）
- *  EJB（Enterprise JavaBean）
- *  RMI（Remote Method Invoke）
- *  JSR(Java Specification Requests,Java 规范提案)
- *  JCP(Java Community Process,Java开发者以及被授权者组成，职能是发展和更新)
- *  DLL(Dynamic Link Library（动态链接库）)
- *  NaN(Not a Number,无穷与非数值,在IEEE浮点数算术标准（IEEE 754）中定义)
  * Java的应用:
  *  Applet: Applet是嵌入到网页里用于装饰网页或者完成某种特殊功能的小应用程序。Applet由浏览器中的Java解释器负责解释执行。
  *  Application: Java Application就是独立运行在Java虚拟机上的一系列的应用程序。
@@ -112,4 +98,32 @@ public class LanguageStatement
  * 5,静态导包: import static
  *      导入类内的静态成员（属性或方法），导入后可直接引用（不须标明类）
  * 6,自动装箱
+ */
+
+/**
+ * KeyWorlds:
+ *  JDK（Java Development Kit）
+ *      JRE（Java Runtime Environment)
+ *          JVM(Java Virtual Machine（Java虚拟机）)(虚机器码（Virtual Machine Code）)
+ *  J2SE（Java 2 Standard Edition）
+ *      XML(Extensible Markup Language,可扩展标记语言)
+ *          PI(Processing Instruction,处理指令)
+ *          DTD(Document Type Definition,文档类型定义)
+ *          XSD(XML Schema Definition,XML Schema 定义)
+ *          DOM(Document Object Model,文档对象模型)
+ *          BOM(Browser Object Model,浏览器对象模型)
+ *          XSL(EXtensible Stylesheet Language,扩展样式表语言)
+ *          XSLT(XSL Transformations,XSL 转换)
+ *  J2EE（Java 2 Enterprise Edition）
+ *      JSP(Java Server Pages)
+ *          EL(Expression Language)
+ *          JSTL(JavaServer Pages Standard Tag Library)
+ *  J2ME（Java 2 Micro Edition）
+ *  JNI（Java Native Interface）
+ *  EJB（Enterprise JavaBean）
+ *  RMI（Remote Method Invoke）
+ *  JSR(Java Specification Requests,Java 规范提案)
+ *  JCP(Java Community Process,Java开发者以及被授权者组成，职能是发展和更新)
+ *  DLL(Dynamic Link Library（动态链接库）)
+ *  NaN(Not a Number,无穷与非数值,在IEEE浮点数算术标准（IEEE 754）中定义)
  */

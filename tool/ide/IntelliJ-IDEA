@@ -50,7 +50,7 @@ register:http://idea.lanyus.com/
 6, 项目配置：
    导入jar及关联源码  : 主菜单 - File - Project Structure... - Project Settings - Modules - Dependencies - +(添加)
    tomcat配置         : 主菜单 - Run - Edit Configurations... - +(添加) - Tomcat Server
-                                                       工作目录配置：...- Tomcat Server - Startup/Connection - +( CATALINA_BASE = 工作目录路径)
+                                                       工作目录配置：...- Tomcat Server - Startup/Connection - +(添加环境变量 CATALINA_BASE = 工作目录路径)
 
 *,常用设置
     多好注释风格: 主菜单 - File - Settings... - Editor - Code Style
