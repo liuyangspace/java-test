@@ -1,4 +1,4 @@
-package language.data.object.classtype.reflect;
+package language.data.object.classtype.reflect.type;
 
 import java.lang.reflect.AnnotatedElement;
 import java.lang.reflect.AnnotatedType;
@@ -14,8 +14,8 @@ import java.lang.reflect.Type;
  */
 public interface TypeVariable<D extends GenericDeclaration> extends java.lang.reflect.TypeVariable,Type, AnnotatedElement
 {
-    Type[] getBounds();
-    D getGenericDeclaration();
-    String getName();
+    Type[] getBounds();//获得泛型的上限，若未明确声明上边界则默认为Object
+    D getGenericDeclaration();//获取声明该类型变量实体(即获得类、方法或构造器名)
+    String getName();//获取声明该类型变量实体(即获得类、方法或构造器名)
     AnnotatedType[] getAnnotatedBounds();
 }

@@ -2,7 +2,25 @@ package javaee.jsp;
 
 /**
  * JSP (Java Server Pages)
- * 语法格式 : <%@ directive [ attribute =“value” ] * %>
+ * JSP 文件Java应用流程:
+ *      JSP 文件解释：将JSP文件解释成 Servlet 类 （Tomcat 下 解释，编译目录为 %CATALINA_BASE%/work/...）
+ *          # 生成 Servlet 类 （Tomcat 下 ，org.apache.jasper.runtime.HttpJspBase）
+ *          # 根据页面 指令标签 <%@ taglib uri...> 及 Web.xml:<jsp-config> 载入 tld文件 （Tomcat 下：project/WEB-INFO/...）
+ *          # 遇到自定义标签 创建标签相关方法，e.g.: _jspx_meth_my2_005ftoUpperCase_005f0(PageContext)
+ *          # 在自动生成的方法体中，创建指定标签实现类的实例
+ *          # 对实例调用 set方法，传递上下文参数：
+ *              .setJspContext(page_context)    //  传递JSP页面上下文
+ *              .setXxx(….)                    //  传递标签属性
+ *              .setJspBody(xxx)                //  传递标签体
+ *          # 执行实例的标签操作方法： .doTag()
+ *      Servlet类编译：编译成java 字节码（.class文件）
+ *      JVM 运行：
+ * 脚本标签：
+ *      <%@ directive [ attribute =“value” ] * %>    // 指令标签
+ *      <%! statement code... %>    // 声明标签,声明 Servlet 成员属性，成员方法
+ *      <%= expression %>           // 表达式标签，将表达式的结果输出到浏览器
+ *      <% code... %>               // 代码块标签，Servlet.service 里的处理代码
+ *      <%-- comment --%>           // 注释
  * 指令标签:
  *      page    指令，属性：
  *          pageEncoding    : 当前页面保存信息的编码
@@ -23,11 +41,6 @@ package javaee.jsp;
  *      taglib  指令,java标签库
  *          uri             :
  *          prefix          :
- *  脚本标签：
- *      <%! statement code... %>    // 声明标签,声明 Servlet 成员属性，成员方法
- *      <%= expression %>           // 表达式标签，将表达式的结果输出到浏览器
- *      <% code... %>               // 代码块标签，Servlet.service 里的处理代码
- *      <%-- comment --%>           // 注释
  *  JSP内置对象：
  *      Object page                 // 当前类的引用
  *      HttpServletRequest request  // 请求
@@ -60,10 +73,10 @@ package javaee.jsp;
  *          /
  *          %
  *  jsp标签：
- *      forward
- *      include
- *      useBead
- *      setProperty
+ *      forward     //
+ *      include     //
+ *      useBead     // 实例化JavaBean类
+ *      setProperty     //
  *  JSTL(JavaServer Pages Standard Tag Library)
  *      http://java.sun.com/jsp/jstl/core
  *          set
@@ -73,6 +86,49 @@ package javaee.jsp;
  *          choose
  *          forEach
  *          url
+ *  自定义（可参考JSTL.jar包）：
+ *      自定义标签库:
+ *      # 实现 javax.servlet.jsp.tagext.JspTag 类
+ *          javax.servlet.jsp.tagext.SimpleTag,简单标签，JSP2.0**
+ *              .setJspContext(JspContext pc)               // 获取 引用当前标签 jsp页面的 上下文（ PageContext ）
+ *              .setXXX(Object attributeValue)              // 属性修改器，获取 前标签的属性，语法：setAttributeName(Object attributeValue)
+ *              .setJspBody(JspFragment jspBody)            // 设置标签体内容
+ *              .doTag()                                    // 标签操作
+ *          javax.servlet.jsp.tagext.Tag，经典标签
+ *      # tld(Tag Library Descriptor)文件 编写 与 配置
+ *          <tlib-version>1.0</tlib-version>    // 标签库版本标识
+ *          <short-name>my</short-name>         // 建议前缀标识
+ *          <uri>http://myTag.com</uri>         // 标签库引用 uri
+ *          <tag>                               // 标签配置
+ *              <name>date</name>               // 标签名
+ *              <tag-class>tag.Date</tag-class> // 标签目标类
+ *              <body-content>empty</body-content> // 标签体 ( empty 空，JSP 任意，scriptless 非标签，tagdependent  )
+ *              <attribute>                     // 属性
+ *                  <name>end</name>            // 属性名
+ *                  <required>true</required>   // 是否必须
+ *                  <rtexprvalue>true</rtexprvalue> // runtime expression value,是否支持EL表达式
+ *                  <type>int</type>            // 数据类型
+ *      # 配置 Web.xml (可选)
+ *          <jsp-config>
+ *              <taglib>
+ *                  <taglib-uri></taglib-uri>
+ *                  <taglib-location></taglib-uri>
+ *      # JSP页面引入自定义标签,使用
+ *          <%@ taglib uri="http://myTag.com" prefix="my" %>
+ *          <my:date/>
+ *      自定义函数库:
+ *      # 创建任意类，声明静态函数
+ *      # tld 文件 编写 与 配置
+ *          <tlib-version>1.0</tlib-version>            // 函数库版本标识
+ *          <short-name>myFn</short-name>               // 建议前缀标识
+ *          <uri>http://myFunction.com</uri>            // 函数库引用 uri
+ *          <function>
+ *              <name>date</name>                           //  EL中使用的方法名
+ *              <function-class>my.Fun</function-class>       //  方法所在的类
+ *              <function-signature>java.lang.String date()</function-signature> //  方法的声明
+ *      # JSP页面引入自定义标签,使用
+ *          <%@ taglib uri="http://myFunction.com" prefix="my" %>
+ *          ${myFn:date()}
  *  JSP开发模式：
  *      JSP+JavBean
  *      Servlet+JSP+JavaBean(MVC)

@@ -1,4 +1,4 @@
-package language.util.security;
+package language.data.object.classtype.security;
 
 /**
  * @see java.lang.SecurityException

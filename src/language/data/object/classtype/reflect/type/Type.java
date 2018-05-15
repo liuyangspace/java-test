@@ -1,4 +1,4 @@
-package language.data.object.classtype.reflect;
+package language.data.object.classtype.reflect.type;
 
 /**
  * Type is the common superinterface for all types in the Java
@@ -11,7 +11,5 @@ package language.data.object.classtype.reflect;
  */
 public interface Type extends java.lang.reflect.Type
 {
-    default String getTypeName() {
-        return toString();
-    }
+    default String getTypeName() { return toString(); }
 }

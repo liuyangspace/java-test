@@ -31,8 +31,6 @@ public class Data
      * 作用：
      *  泛型仅在源码中给javac编译器使用,.class文件中不带有泛形信息，不影响程序运行效率，这个过程称之为“类型擦除（type erasure）”。
      */
+    public static void main(String[] args){ "".equals(""); }
 
-    public static void main(String[] args){
-        "".equals("");
-    }
 }
