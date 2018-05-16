@@ -1,6 +1,6 @@
-package language.data;
+package language.data.array;
 
-class Array {
+class ArrayBase {
 
     /**
      * 数组是有序数据的集合，数组中的每个元素具有相同的数据类型，数组名和下标可惟一地确定数组中的元素。
