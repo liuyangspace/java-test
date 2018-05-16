@@ -8,5 +8,6 @@ module java.language {
     //uses sun.util.spi.CalendarProvider;
     //provides java.nio.file.spi.FileSystemProvider with jdk.internal.jrtfs.JrtFileSystemProvider;
 
+    //exports sun.reflect.generics.repository to java.language;
     exports language;
 }

@@ -1,4 +1,4 @@
-package language.data.object.classtype.reflect.member;
+package language.data.object.classtype.reflect.member.throwable;
 
 /**
  * InvocationTargetException is a checked exception that wraps
