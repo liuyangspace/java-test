@@ -2,6 +2,12 @@ package language.data.array;
 
 //import java.lang.reflect.Array as ReflectArray
 
+/**
+ * The {@code Array} class provides static methods to dynamically create and
+ * access Java arrays.
+ *
+ * @see java.lang.reflect.Array
+ */
 public class Array {
     static java.lang.reflect.Array $this;
 

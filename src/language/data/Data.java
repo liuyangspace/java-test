@@ -1,7 +1,10 @@
 package language.data;
 
 /**
- * java字符串对象： "".equals("")
+ * 语言基础数据类型 及其 扩展，操作
+ *
+ * 常例：
+ *      java字符串对象： "".equals("")
  */
 public class Data
 {
