@@ -30,7 +30,7 @@ public class Data
      *  声明泛型类: class ClassName<TypeClass>
      *  多接口限制: class ClassName<TypeClass extends/super ParentClass & interface1 & interface2 & interface3>
      *  通配符泛型: class ClassName<? extends ParentClass>
-     *  泛型方法: public <TypeClass> void methodName(TypeClass x) {}
+     *  泛型方法: public <TypeClass(作用域)> ClassName<TypeClass> methodName(TypeClass x) {}
      * 作用：
      *  泛型仅在源码中给javac编译器使用,.class文件中不带有泛形信息，不影响程序运行效率，这个过程称之为“类型擦除（type erasure）”。
      */
