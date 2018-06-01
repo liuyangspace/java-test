@@ -45,7 +45,7 @@ public class Reflect {
 class ReflectTest{
     public static void main(String[] args) throws Exception {
         //
-        System.out.println(Class.forName("language.data.object.classtype.reflect.Class"));
+        System.out.println(Class.forName("language.data.object.clazz.reflect.Class"));
         //
         System.out.println(Class.class);
         //

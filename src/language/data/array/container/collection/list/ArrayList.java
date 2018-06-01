@@ -1,5 +1,7 @@
 package language.data.array.container.collection.list;
 
+import language.data.array.container.collection.list.vector.Vector;
+
 import java.util.*;
 import java.util.LinkedList;
 import java.util.RandomAccess;

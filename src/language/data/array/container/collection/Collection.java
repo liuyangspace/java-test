@@ -1,5 +1,7 @@
 package language.data.array.container.collection;
 
+import language.data.array.container.collection.list.vector.Vector;
+
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Stream;

@@ -51,7 +51,8 @@ public class LanguageStatement
      * 控制语句:
      *  分支语句 if-elseif-else，break，switch-case-default，return
      *  循环语句 while，do-while，[Lable:]for(;;)，continue[ Lable]
-     *  异常处理语句 try-catch-finally，throw,throws,assert
+     *  异常处理语句 try-catch-finally，throw,throws
+     *  调试 assert
      */
 
     // 注释语句

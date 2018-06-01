@@ -22,4 +22,7 @@ class ArrayBase {
         intArray3[1]=new int[3];
     }
 
+    public Object array(){
+        return new int[]{1,2,3};//
+    }
 }
