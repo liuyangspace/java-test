@@ -32,10 +32,8 @@ import java.lang.annotation.*;
  * regardless of whether or not a {@code FunctionalInterface}
  * annotation is present on the interface declaration.
  *
- * @jls 4.3.2. The Class Object
- * @jls 9.8 Functional Interfaces
- * @jls 9.4.3 Interface Method Body
- * @jls 9.6.4.9 @FunctionalInterface
+ * @see java.lang.FunctionalInterface
+ *
  * @since 1.8
  */
 @Documented

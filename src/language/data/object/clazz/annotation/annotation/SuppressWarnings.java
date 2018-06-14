@@ -6,7 +6,13 @@ import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.*;
 
-/**
+/** 警告抑制
+ * Indicates that the named compiler warnings should be suppressed in the
+ * annotated element (and in all program elements contained in the annotated
+ * element).
+ *
+ * suppress type: unchecked deprecation
+ *
  * @see java.lang.SuppressWarnings
  */
 @Target({TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE, MODULE})

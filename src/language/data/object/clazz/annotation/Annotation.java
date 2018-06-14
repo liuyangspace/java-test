@@ -14,6 +14,14 @@ public interface Annotation extends java.lang.annotation.Annotation
     Class<? extends java.lang.annotation.Annotation> annotationType();
 }
 /**
+ * Annotations have a number of uses, among them:
+ *      Information for the compiler — Annotations can be used by the compiler to detect errors or suppress warnings.
+ *      Compile-time and deployment-time processing — Software tools can process annotation information to generate code, XML files, and so forth.
+ *      Runtime processing — Some annotations are available to be examined at runtime.
+ * UseFormat:
+ *      @annotationName( elementName = elementValue [, ...] )
+ *      [@annotationName2...]
+ *      [classe/fields/method/other program elements] declarations
  * 元注解(meta-annotation):
  *  @Target:(用于描述注解的使用范围)
  *      1.CONSTRUCTOR:用于描述构造器
