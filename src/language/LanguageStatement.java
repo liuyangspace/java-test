@@ -1,6 +1,12 @@
 package language;
 
 /**
+ * 语言组成:
+ *  标识量:
+ *      命名: 字母、数字、下划线、$字符组成，不能以数字开头，而且不能为保留字。
+ *      常量: 用final做修饰符。e.g: final int i = 345;
+ *      变量: 声明 type identifier [=value][，identifier[=value]…];多个变量之间用“,”分隔，结束用“;”。e.g: int a5 = 6,a6 = 8;
+ *
  * Link: http://java.sun.com
  * Java的应用:
  *  Applet: Applet是嵌入到网页里用于装饰网页或者完成某种特殊功能的小应用程序。Applet由浏览器中的Java解释器负责解释执行。
@@ -11,77 +17,60 @@ package language;
 
 public class LanguageStatement
 {
+    /** operator 运算符 */
+    final String[] operator = {
+        // 算术运算
+        "+","-","++","--",   // 单目
+        "+","-","*","/","%", // 双目
+        "a>b?true:false",    // 三目
+        // 关系运算
+        ">","<",">=","<=","==","!=","|=",
+        // 位运算
+        "&","/","~",
+        // 位移
+        "<<",">>",">>>",
+        // 逻辑运算
+        "&&","!","||",
+        // 其他
+        "instanceof",        // 实例运算符
+        "new"                // 内存分配运算符
+    };
 
-    /**
-     * 常量: 用final做修饰符。
-     */
-    final int i = 345;
-    final float f = 33.2f;
-    final double d = 33.2d;
-    final java.lang.String s = "ddddd";
-
-    /**
-     * 变量: 字母、数字、下划线、$字符组成，不能以数字开头，而且不能为保留字。
-     * 声明格式为: type identifier [=value][，identifier[=value]…];多个变量之间用“,”分隔，结束用“;”。
-     */
-    int a1,a2,a3;
-    {
-        int a1=23;
-        a1=45;
-    }
-    int a5 = 6,a6 = 8;
-    float tr_$ = 33.f;
-    double sxf$;
-    java.lang.String _s44 = "dddd";
-
-    /**
-     * 运算符
-     * 算术:
-     *  单目：+（取正）-（取负） ++（自增） - -（自减）
-     *  双目：+ - * / %（取余）
-     *  三目：a>b?true:false
-     * 关系运算符: ＞ ＜ ＞= ＜= == != |= 
-     * 位运算符: &(与) ~(非) |(或) ^(异或)
-     * 位移: <<(带符号左移) >>(带符号右移) >>>(无符号右移)
-     * 逻辑运算符: &&(与) !(非) ||(或)
-     * 其他: instanceof(实例运算符) new(内存分配运算符)
-     */
-
-    /**
-     * 控制语句:
-     *  分支语句 if-elseif-else，break，switch-case-default，return
-     *  循环语句 while，do-while，[Lable:]for(;;)，continue[ Lable]
-     *  异常处理语句 try-catch-finally，throw,throws
-     *  调试 assert
-     */
+    /** keyword 关键字 */
+    final String[] keyword = {
+        // 流程控制 (顺序略)
+        "if","else if","else","switch","case","default",    // 分支:if-elseif-else,switch-case-default
+        "while","do","for",                                 // 循环:[Lable:]for(;;),while，do-while，
+        "continue","break","return",                        // 跳转:continue[ Lable],break,return,
+        "try","catch","finally","throw","throws",           // 异常处理:try-catch-finally，throw,throws
+        "assert",                                           // 调试:assert
+        // 声明
+        "void","boolean","byte","char","double","float","int","long","short",   // 基本类型
+        "true","false","null",                                                  // 预定义(基本)类型值
+        "interface","abstract","class","enum","package","module",               // 复合类型
+        "super","this",                                                         // 预定义(复合)类型值,[ParentClass.]super , this
+        "import","extends","implements",                                        // 复合类型关系
+        "public","private","protected",                                         // 修饰符:访问控制，默认 friendly（同包访问）
+        "final",        // 常量 (修饰符)
+        "static",       // 静态 (修饰符)
+        "native",       // 本地
+        "strictfp",     // 严格遵守FP-strict
+        "transient",    // 暂时的,非序列化的
+        "volatile",     // 多线程共享
+        "synchronized", // 同步锁
+        // 其他
+        "@",            // 注解（错误检查，及屏蔽）
+        "...",          // 可变数量参数，例：public static void dealArray(int... intArray) {}
+        // 保留字
+        "goto","const"
+    };
 
     // 注释语句
     // //用于单行注释。
     // /*…*/用于多行注释。注释从/*开始，到*/结束。
-
     // /**…*/是Java所特有的doc注释。注释从/**开始，到*/结束。在JDK中有javadoc的工具，通过这个工具可以由这些注释生成HTML形式的帮助文件。
-    /**
-     * 声明：
-     *      boolean , byte , char , double , float , int , long , short
-     *      class , enum , null
-     *      package , interface , abstract
-     *      [ParentClass.]super , this
-     *      true , false , void
-     *      import[ static] , extends , implements
-     *      module , exports[ to] , uses , requires , package , provides[ with]
-     * 修饰符:
-     *      public , private , protected
-     *      native(本地) , static , final
-     *      strictfp(严格遵守FP-strict) , transient(暂时的,非序列化的) , volatile(多线程共享) , synchronized(同步锁)
-     * @ 符：注解（错误检查，及屏蔽）
-     * ... : 可变数量参数，例：public static void dealArray(int... intArray) {}
-     * 保留字：goto,const
-     */
 
-    public static void main(String[] args)
-    {
-        System.out.print("JAVA LanguageStatement\\LanguageStatement\n");
-    }
+    public static void main(String[] args) { System.out.print("JAVA LanguageStatement\\LanguageStatement\n"); }
 }
 /**
  * 1，private 不限制同类内部方法调用（@see java.lang.Boolean.compareTo(Boolean b)）
