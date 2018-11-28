@@ -28,6 +28,7 @@ hs_err_pid*
 /local
 /out
 /lib
+/tool
 /.gitignore
 
 /doc/manual/

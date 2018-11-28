@@ -26,7 +26,7 @@ package javaee.jsp;
  *          pageEncoding    : 当前页面保存信息的编码
  *          contentType     : 当前页面生成的servlet文件响应浏览器的编码
  *          import          : 导入Java类或接口，可使用通配符'*',多个类之间使用逗号分隔,属性可以重复引用
- *          language        : 当前jsp页面使用的语言,默认：java
+ *          javase        : 当前jsp页面使用的语言,默认：java
  *          info            : 当前页面的输出信息
  *          session         : 当前页面是否可以直接使用 变量 session ,默认：ture，e.g.: session.isNew()
  *          extends         ; 当前jsp页面在生成servlet文件时，继承的父类
