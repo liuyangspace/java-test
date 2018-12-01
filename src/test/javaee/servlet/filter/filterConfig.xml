@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- RawPath : WEB-INFO/web.xml -->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!-- filter -->
+
+    <filter>
+        <filter-name>Filter</filter-name>
+        <filter-class>test.javaee.servlet.filter.Filter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter</filter-name>
+        <url-pattern>/filter</url-pattern>
+        <url-pattern>/*</url-pattern>
+        <!--<servlet-name>FilterServlet</servlet-name>-->
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+
+</web-app>
