@@ -7,6 +7,7 @@ import javax.servlet.ServletResponse;
 import java.io.IOException;
 
 /**
+ *
  * Defines methods that all servlets must implement.
  * A servlet is a small Java program that runs within a Web server, receive and respond to requests from Web clients,
  * usually across HTTP.  This interface defines methods to initialize a servlet, to service requests, and to remove a
@@ -23,6 +24,10 @@ import java.io.IOException;
  *      <servlet>
  *          <servlet-name>AnyName</servlet-name>
  *          <servlet-class>HelloServlet</servlet-class>
+ *          <init-param><!-- 配置初始化参数列表 -->
+ *              <param-name>gf</param-name><!-- 初始化参数的名称 -->
+ *              <param-value>gfTest</param-value><!-- 初始化参数的值 -->
+ *          </init-param>
  *          <load-on-startup>2</load-on-startup> <!-- 实例化优先级 -->
  *      </servlet>
  *      <servlet-mapping>

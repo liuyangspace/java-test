@@ -16,8 +16,9 @@ import java.io.IOException;
  * @see javax.servlet.RequestDispatcher
  */
 public interface RequestDispatcher extends javax.servlet.RequestDispatcher {
-
+    // 跳转
     public void forward(ServletRequest request, ServletResponse response) throws ServletException, IOException;
+    // 包含 (存在请求，响应上下文)
     public void include(ServletRequest request, ServletResponse response) throws ServletException, IOException;
 
 }

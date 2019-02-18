@@ -7,6 +7,9 @@ import java.util.Locale;
 
 /**
  * Defines an object to assist a servlet in sending a response to the client.
+ *  # getOutputStream和getWriter这两个方法互相排斥，调用了其中的任何一个方法后，就不能再调用另一方法
+ *  # Serlvet的service方法结束后，Servlet引擎将检查getWriter或getOutputStream方法返回的输出流对象是否已经调用过close方法，
+ *      如果没有，Servlet引擎将调用close方法关闭该输出流对象。
  *
  * @see javax.servlet.ServletResponse
  * @see javax.servlet.ServletOutputStream

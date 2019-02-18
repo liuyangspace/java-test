@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * ServletContext 是web工程的，所有Servlet共享
+ * ServletContext 是web工程的，所有Servlet共享, 多个Servlet通过ServletContext对象实现数据共享
  *
  * @see javax.servlet.ServletContext
  * @see javax.servlet.ServletConfig#getServletContext
