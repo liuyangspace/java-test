@@ -57,7 +57,7 @@ info: JavaEE 服务器容器，实现了 Servlet、JSP 规矩
         // servlet
         <servlet>               <!--标签：进行servlet注册-->
         	<servlet-name>      <!--标签：为servlet起一个别名，提供给其他程序使用-->
-        	<load-on-startup>   <!-- 标签：启动时的优先级 -->
+        	<load-on-startup>   <!--标签：启动时的优先级 -->
             <servlet-class>     <!--标签：确定servlet类所在位置-->
         	<jsp-file>          <!--标签：指定JSP-->
         <servlet-mapping>       <!--标签：映射已有的servlet-->
@@ -82,4 +82,42 @@ info: JavaEE 服务器容器，实现了 Servlet、JSP 规矩
             /classes    - 存放当前web的源码文件生成的class文件
     	    /lib        - 所依赖jar文件存放的位置
             /web.xml    - web项目的配置文件
+
+5,虚拟目录的映射方式
+    # 虚拟目录的映射有三种方式：
+    5.1，在server.xml文件的host元素中配置
+        使用Context标签:
+            path属性：虚拟目录名称
+            docBase属性：web应用所在目录(里面包含WEB-INF)
+        缺省web应用
+    5.2，在conf目录下建立myWeb.xml(Tomcat6中，不再建议在server.xml文件中配置context元素，细节查看tomcat服务器关于context元素的说明)
+        路径：$CATALINA_BASE/conf/[enginename]/[hostname]/
+        多目录结构使用#：foo#bar
+        使用ROOT.xml，如果不生效，重启tomcat和浏览器
+    5.3，让tomcat自动映射：
+        tomcat服务器会自动管理webapps目录下的所有web应用，并把它映射成虚拟目录。
+        换句话说，tomcat服务器webapps目录中的web应用，外界可以直接访问
+        # 通过WAR方式发布部署web应用：
+            工程目录: jar -cvf name.war ./*
+            将war包放至服务器tomcat/webapps目录下，重启tomcat
+
+*, 其他
+    Tomcat服务器与Servlet版本关系:
+        Apache Tomcat version       Servlet/JSP Spec        JavaEE版本
+        7.0.x   (7.0.27 )           3.0/2.2                 6.0
+        6.0.x   (6.0.35 )           2.5/2.1                 5.0
+        5.5.x   (5.5.35 )           2.4/2.0                 1.4
+        4.1.x   (4.1.40 )           2.3/1.2                 1.3
+        3.3.x   (3.3.2  )           2.2/1.1                 1.1
+
+参考：https://www.ibm.com/developerworks/cn/java/j-lo-tomcat1/
+
+
+
+
+
+
+
+
+
 

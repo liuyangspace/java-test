@@ -10,8 +10,8 @@ import java.util.Calendar;
 
 /**
  * The interface that adds support to the JDBC API for the
- * JavaBeans&trade; component model.
- * A rowset, which can be used as a JavaBeans component in
+ * JavaBeans&trade; component-1 model.
+ * A rowset, which can be used as a JavaBeans component-1 in
  * a visual Bean development environment, can be created and
  * configured at design time and executed at run time.
  *

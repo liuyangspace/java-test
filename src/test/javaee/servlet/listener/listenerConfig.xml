@@ -10,13 +10,5 @@
     <listener>
         <listener-class>test.javaee.servlet.listener.RequestListener</listener-class>
     </listener>
-    <servlet>
-        <servlet-name>RequestListener</servlet-name>
-        <servlet-class>test.javaee.servlet.listener.Servlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RequestListener</servlet-name>
-        <url-pattern>/listener</url-pattern>
-    </servlet-mapping>
 
 </web-app>

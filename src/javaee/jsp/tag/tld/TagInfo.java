@@ -25,20 +25,20 @@ public class TagInfo extends javax.servlet.jsp.tagext.TagInfo{
 
     public String getTagName() { return super.getTagName(); }
     public TagAttributeInfo[] getAttributes() { return super.getAttributes(); }
-    public VariableInfo[] getVariableInfo(TagData data){ return super.getVariableInfo(data); }
+    public javax.servlet.jsp.tagext.VariableInfo[] getVariableInfo(TagData data){ return super.getVariableInfo(data); }
     public boolean isValid(TagData data) { return super.isValid(data); }
-    public ValidationMessage[] validate( TagData data ) { return super.validate(data); }
+    public javax.servlet.jsp.tagext.ValidationMessage[] validate( TagData data ) { return super.validate(data); }
     public void setTagExtraInfo(TagExtraInfo tei){ super.setTagExtraInfo(tei); }
     public TagExtraInfo getTagExtraInfo(){ return super.getTagExtraInfo(); }
     public String getTagClassName(){ return super.getTagClassName(); }
     public String getBodyContent(){ return super.getBodyContent(); }
     public String getInfoString(){ return super.getInfoString(); }
     public void setTagLibrary(TagLibraryInfo tl){ super.setTagLibrary(tl);}
-    public TagLibraryInfo getTagLibrary(){ return super.getTagLibrary(); }
+    public javax.servlet.jsp.tagext.TagLibraryInfo getTagLibrary(){ return super.getTagLibrary(); }
     public String getDisplayName(){ return super.getDisplayName(); }
     public String getSmallIcon(){ return super.getSmallIcon(); }
     public String getLargeIcon(){ return super.getLargeIcon(); }
-    public TagVariableInfo[] getTagVariableInfos(){ return super.getTagVariableInfos(); }
+    public javax.servlet.jsp.tagext.TagVariableInfo[] getTagVariableInfos(){ return super.getTagVariableInfos(); }
     public boolean hasDynamicAttributes(){ return super.hasDynamicAttributes(); }
 
 

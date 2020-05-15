@@ -5,7 +5,7 @@ import javax.servlet.jsp.JspWriter;
 import java.util.Enumeration;
 
 /**
- * The JspContext provides a number of facilities to the page/component author and page implementor, including:
+ * The JspContext provides a number of facilities to the page/component-1 author and page implementor, including:
  *      1) a single API to manage the various scoped namespaces
  *      2) a mechanism to obtain the JspWriter for output
  *      3) a mechanism to expose page directive attributes to the scripting environment

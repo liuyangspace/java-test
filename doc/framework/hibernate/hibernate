@@ -1,0 +1,17 @@
+
+hibernate
+
+
+home: http://hibernate.org/
+doc: https://github.com/hibernate/hibernate-orm
+
+# 将 JDBC 封装成面向对象操作（从JDBC到hibernate封装: 表=》类，列=》类成员属性，记录=》类实例化后的对象）
+
+1, 主要类包
+
+2，配置文件
+
+3，base
+    curd:
+
+

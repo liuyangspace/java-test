@@ -4,16 +4,16 @@ import java.lang.reflect.AnnotatedType;
 import java.lang.reflect.GenericArrayType;
 
 /**
- * {@code AnnotatedArrayType} represents the potentially annotated use of an array type, whose component type may
+ * {@code AnnotatedArrayType} represents the potentially annotated use of an array type, whose component-1 type may
  * itself represent the annotated use of a type.
  *
  * @see java.lang.reflect.AnnotatedArrayType
  */
 public interface AnnotatedArrayType extends AnnotatedType {
     /**
-     * Returns the potentially annotated generic component type of this array type.
+     * Returns the potentially annotated generic component-1 type of this array type.
      *
-     * @return the potentially annotated generic component type of this array type
+     * @return the potentially annotated generic component-1 type of this array type
      * @see GenericArrayType#getGenericComponentType()
      */
     AnnotatedType  getAnnotatedGenericComponentType();

@@ -1,0 +1,11 @@
+
+home:https://spring.io
+
+
+1, Spring MVC annotations
+     @RestController                    // org.springframework.web.bind.annotation.RestController
+     @Controller                        // org.springframework.stereotype.Controller
+     @RequestMapping("path")            // org.springframework.web.bind.annotation.RequestMapping
+     @ComponentScan                     // org.springframework.context.annotation.ComponentScan
+     @Import                            // org.springframework.context.annotation.Import
+     @Autowired                         // org.springframework.beans.factory.annotation.Autowired

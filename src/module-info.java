@@ -11,6 +11,10 @@ module java.language {
     requires java.sql;
     requires mysql.connector.java;
     requires catalina;
+    // requires java.mail;
+    requires el.api;
+    requires tomcat.coyote;
+    // requires java.activation;
     //exports jdk.internal.math to java.base;
     //uses sun.util.spi.CalendarProvider;
     //provides java.nio.file.spi.FileSystemProvider with jdk.internal.jrtfs.JrtFileSystemProvider;

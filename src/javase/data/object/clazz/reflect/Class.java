@@ -100,7 +100,7 @@ public final class Class<T> /* extends java.lang.Class */ implements java.io.Ser
         { return $this.getMethod(name,parameterTypes); }
     public Method getDeclaredMethod(String name, java.lang.Class<?>... parameterTypes) throws NoSuchMethodException, SecurityException
         { return $this.getDeclaredMethod(name,parameterTypes);}
-    // Resource
+    // Resource URL
     public InputStream getResourceAsStream(String name) {return $this.getResourceAsStream(name);}
     public URL getResource(String name) {return $this.getResource(name);}
     // Security

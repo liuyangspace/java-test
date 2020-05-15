@@ -17,10 +17,10 @@ import java.io.IOException;
  *      <url-pattern>/filter</url-pattern>
  *      <url-pattern>/*</url-pattern>
  *      <servlet-name>FilterServlet</servlet-name>
- *      <dispatcher>REQUEST</dispatcher>
- *      <dispatcher>FORWARD</dispatcher>
- *      <dispatcher>INCLUDE</dispatcher>
- *      <dispatcher>ERROR</dispatcher>
+ *      <dispatcher>REQUEST</dispatcher>    // 默认值，只拦截用户的新的请求。
+ *      <dispatcher>FORWARD</dispatcher>    // 对转发进行拦截
+ *      <dispatcher>INCLUDE</dispatcher>    // 对include拦截。
+ *      <dispatcher>ERROR</dispatcher>      // 对错误进行拦截。
  *  </filter-mapping>
  *    顺序 依照配置 filter-mapping 的顺序执行
  * url-pattern的设置：

@@ -14,6 +14,18 @@ import java.util.stream.Stream;
  * A class loader is an object that is responsible for loading classes.
  *
  *
+ * jvm加载的顺序：BoopStrap ClassLoder-〉ExtClassLoader->AppClassLoder
+ * 类加载机制-双亲委托机制:
+ *  （1）首先会到自定义加载器中查找，看是否已经加载过，如果已经加载过，则返回字节码。
+ *　（2）如果自定义加载器没有加载过，则询问上一层加载器(即AppClassLoader)是否已经加载过Test.class。
+ *  （3）如果没有加载过，则询问上一层加载器（ExtClassLoader）是否已经加载过。
+ *　（4）如果没有加载过，则继续询问上一层加载（BoopStrap ClassLoader）是否已经加载过。
+ *  （5）如果BoopStrap ClassLoader依然没有加载过，则到自己指定类加载路径下（"sun.boot.class.path"）查看是否有Test.class字节码，有则返回，没有通知下一层加载器ExtClassLoader到自己指定的类加载路径下（java.ext.dirs）查看。
+ *　（6）依次类推，最后到自定义类加载器指定的路径还没有找到Test.class字节码，则抛出异常ClassNotFoundException。
+ *  自定义类加载器步骤
+ *　（1）继承ClassLoader
+ *  （2）重写findClass（）方法
+ *  （3）调用defineClass（）方法
  * @see java.lang.ClassLoader
  * @see jdk.internal.loader.ClassLoaders
  * @see jdk.internal.loader.ClassLoaders.BootClassLoader

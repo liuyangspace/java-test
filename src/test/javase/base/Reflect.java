@@ -1,10 +1,13 @@
 package test.javase.base;
 
+import org.junit.Test;
+
 import java.lang.Class;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class Reflect {
@@ -43,7 +46,17 @@ public class Reflect {
 }
 
 class ReflectTest{
+
     public static void main(String[] args) throws Exception {
+        //
+        URL url = test.Test.class.getResource("");
+        System.out.println(url);
+        URL url2 = test.Test.class.getResource("/");
+        System.out.println(url2);
+        URL url3 = test.Test.class.getClassLoader().getResource("");
+        System.out.println(url3);
+        URL url4 = test.Test.class.getClassLoader().getResource("/");
+        System.out.println(url4);
         //
         System.out.println(Class.forName("javase.data.object.clazz.reflect.Class"));
         //

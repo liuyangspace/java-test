@@ -40,10 +40,11 @@ public class LanguageStatement
     final String[] keyword = {
         // 流程控制 (顺序略)
         "if","else if","else","switch","case","default",    // 分支:if-elseif-else,switch-case-default
-        "while","do","for",                                 // 循环:[Lable:]for(;;),while，do-while，
+        "while","do","for",                                 // 循环:[Lable:]for(init;judge;do),for(value:List)，while，do-while，
         "continue","break","return",                        // 跳转:continue[ Lable],break,return,
         "try","catch","finally","throw","throws",           // 异常处理:try-catch-finally，throw,throws
         "assert",                                           // 调试:assert
+                                                            // lambda: ( [ [Type] params] [,]) -> [{] [return] statements [}] [;]
         // 声明
         "void","boolean","byte","char","double","float","int","long","short",   // 基本类型
         "true","false","null",                                                  // 预定义(基本)类型值

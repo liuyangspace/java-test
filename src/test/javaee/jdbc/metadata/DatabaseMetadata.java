@@ -64,5 +64,11 @@ public class DatabaseMetadata {
             }
             System.out.print("\n");
         }
+        databaseMetaData = connection.getMetaData();
+        ResultSet columns = databaseMetaData.getColumns(connection.getCatalog(),"=","user",null);
+        while (columns.next()){
+            String filedName = columns.getString("COLUMN_NAME");
+            System.err.println(filedName);
+        }
     }
 }

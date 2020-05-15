@@ -19,7 +19,19 @@ package javaee;
  *  JavaMail
  *  JAF（JavaBeans Activation Framework）
  *
- *
+ * JavaEE服务器软件:
+ *      名称            种类          开发公司        是否开源
+ *      WebLogic        大型          Oracle
+ *      WebSphere       大型          IBM
+ *      Glass Fish      中型          Oracle          开源
+ *      JBoss           中型          JBoss           开源
+ *      Resin           小型          Caucho公司      开源
+ *      Jetty           内置式        Jetty/eclipse   开源
+ *      Tomcat          小型          Apache          开源
+ *      # 注释中 servlet jsp 实现参照tomcat
+ * Java Web 模式:
+ *      JSP+JavaBean模式
+ *      Servlet+JSP+JavaBean模式
  * Keywords:
  *  JSP(Java Server Pages)
  *      EL(Expression Language)

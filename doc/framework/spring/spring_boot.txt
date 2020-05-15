@@ -1,0 +1,185 @@
+
+
+
+home:https://spring.io
+
+1, start and install
+    1.1, Maven Installation
+        create  pom.xml : mvn package
+    1.2, Gradle Installation
+        create build.gradle :
+
+2,  Starters
+    Starters are a set of convenient dependency descriptors that you can include in your application.
+    the org.springframework.boot group Starters:
+        spring-boot-starter                             // Core starter, including autoconfiguration support, logging and YAML
+        spring-boot-starter-activemq                    // Starter for JMS messaging using Apache ActiveMQ
+        spring-boot-starter-amqp                        // Starter for using Spring AMQP and Rabbit MQ
+        spring-boot-starter-aop                         // Starter for aspect-oriented programming with Spring AOP and AspectJ
+        spring-boot-starter-artemis                     // Starter for JMS messaging using Apache Artemis
+        spring-boot-starter-batch                       // Starter for using Spring Batch Pom
+        spring-boot-starter-cache                       // Starter for using Spring Framework’s caching support
+        spring-boot-starter-cloud-connectors            // Starter for using Spring Cloud Connectors which simplifies connecting to services in cloud platforms like Cloud Foundry and Heroku
+        spring-boot-starter-data-cassandra              // Starter for using Cassandra distributed database and Spring Data Cassandra
+        spring-boot-starter-data-cassandra-reactive     // Starter for using Cassandra distributed database and Spring Data Cassandra Reactive
+        spring-boot-starter-data-couchbase              // Starter for using Couchbase document-oriented database and Spring Data Couchbase
+        spring-boot-starter-data-couchbase-reactive     // Starter for using Couchbase document-oriented database and Spring Data Couchbase Reactive
+        spring-boot-starter-data-elasticsearch          // Starter for using Elasticsearch search and analytics engine and Spring Data Elasticsearch
+        spring-boot-starter-data-jpa                    // Starter for using Spring Data JPA with Hibernate
+        spring-boot-starter-data-ldap                   // Starter for using Spring Data LDAP
+        spring-boot-starter-data-mongodb                // Starter for using MongoDB document-oriented database and Spring Data MongoDB
+        spring-boot-starter-data-mongodb-reactive       // Starter for using MongoDB document-oriented database and Spring Data MongoDB Reactive
+        spring-boot-starter-data-neo4j                  // Starter for using Neo4j graph database and Spring Data Neo4j
+        spring-boot-starter-data-redis                  // Starter for using Redis keyvalue data store with Spring Data Redis and the Lettuce client
+        spring-boot-starter-data-redis-reactive         // Starter for using Redis keyvalue data store with Spring Data Redis reactive and the Lettuce client
+        spring-boot-starter-data-rest                   // Starter for exposing Spring Data repositories over REST using Spring Data REST
+        spring-boot-starter-data-solr                   // Starter for using the Apache Solr search platform with Spring Data Solr
+        spring-boot-starter-freemarker                  // Starter for building MVC web applications using FreeMarker views
+        spring-boot-starter-groovy-templates            // Starter for building MVC web applications using Groovy Templates views
+        spring-boot-starter-hateoas                     // Starter for building hypermediabased RESTful web application with Spring MVC and Spring HATEOAS
+        spring-boot-starter-integration                 // Starter for using Spring Integration
+        spring-boot-starter-jdbc                        // Starter for using JDBC with the HikariCP connection pool
+        spring-boot-starter-jersey                      // Starter for building RESTful web applications using JAX-RS and Jersey. An alternative to spring-boot-starter-web
+        spring-boot-starter-jooq                        // Starter for using jOOQ to access SQL databases. An alternative to spring-bootstarter-data-jpa or spring-boot-starter-jdbc
+        spring-boot-starter-json                        // Starter for reading and writing json
+        spring-boot-starter-jta-atomikos                // Starter for JTA transactions using Atomikos
+        spring-boot-starter-jta-bitronix                // Starter for JTA transactions using Bitronix
+        spring-boot-starter-mail                        // Starter for using Java Mail and Spring Framework’s email sending support
+        spring-boot-starter-mustache                    // Starter for building web applications using Mustache views
+        spring-boot-starter-oauth2-oidc-client          // Starter for using Spring Security’s OAuth2/OpenID Connect client features
+        spring-boot-starter-quartz                      // Starter for using the Quartz scheduler
+        spring-boot-starter-security                    // Starter for using Spring Security Pom
+        spring-boot-starter-test                        // Starter for testing Spring Boot applications with libraries including JUnit, Hamcrest and Mockito
+        spring-boot-starter-thymeleaf                   // Starter for building MVC web applications using Thymeleaf views
+        spring-boot-starter-validation                  // Starter for using Java Bean Validation with Hibernate Validator
+        spring-boot-starter-web                         // Starter for building web, including RESTful, applications using Spring MVC. Uses Tomcat as the default embedded container
+        spring-boot-starter-web-services                // Starter for using Spring Web Services
+        spring-boot-starter-webflux                     // Starter for building WebFlux applications using Spring Framework’s Reactive Web support
+        spring-boot-starter-websocket                   // Starter for building WebSocket applications using Spring Framework’s WebSocket support
+        spring-boot-starter-actuator                    // Starter for using Spring Boot’s Actuator which provides production ready features to help you monitor and manage your application
+        // 
+        spring-boot-starter-jetty                       // Starter for using Jetty as the embedded servlet container. An alternative to spring-boot-starter-tomcat
+        spring-boot-starter-log4j2                      // Starter for using Log4j2 for logging. An alternative to spring-boot-starter-logging
+        spring-boot-starter-logging                     // Starter for logging using Logback. Default logging starter
+        spring-boot-starter-reactor-netty               // Starter for using Reactor Netty as the embedded reactive HTTP server.
+        spring-boot-starter-tomcat                      // Starter for using Tomcat as the embedded servlet container. Default servlet container starter used by spring-boot-starter-web
+        spring-boot-starter-undertow                    // Starter for using Undertow as the embedded servlet container. An alternative to spring-boot-starter-tomcat
+
+3, Annotations
+    @SpringBootApplication              // org.springframework.boot.autoconfigure.SpringBootApplication,equivalent to using @Configuration, @EnableAutoConfiguration, and @ComponentScan with their default attributes
+    @EnableAutoConfiguration            // org.springframework.boot.autoconfigure.EnableAutoConfiguration
+    @Configuration                      // org.springframework.context.annotation.Configuration
+    @ImportResource                     // org.springframework.context.annotation.ImportResource
+
+4, config
+    Application Property Files ( resources/application.properties ) :
+        keys:
+            local.server.port=8080                                          // port
+            spring.devtools.restart.log-condition-evaluation-delta=false    // To disable the logging of the report
+            spring.devtools.restart.exclude=static/**,public/**             //
+            spring.devtools.reload.trigger-file=.reloadtrigger
+            spring.devtools.remote.secret=mysecret
+        load path ( adds them to the Spring Environment ):
+            1, A /config subdirectory of the current directory
+            2, The current directory
+            3, A classpath /config package
+            4, The classpath root
+        rename config file:
+            java -jar myproject.jar --spring.config.name=myproject
+            java -jar myproject.jar --spring.config.location=classpath:/default.properties,classpath:/override.properties
+            java -jar myproject.jar --spring.config.location=classpath:/config/
+            java -jar myproject.jar --spring.config.location=file:./config/
+        Configuring Random Values:
+            my.secret=${random.value}
+            my.number=${random.int}
+            my.bignumber=${random.long}
+            my.uuid=${random.uuid}
+            my.number.less.than.ten=${random.int(10)}
+            my.number.in.range=${random.int[1024,65536]}
+        Placeholders in Properties
+            app.name=MyApp
+            app.description=${app.name} is a Spring Boot application
+    Externalized Configuration :
+        @TestPropertySource annotations on your tests
+        properties attribute on your tests. Available on @SpringBootTest and the test annotations for testing a particular slice of your application.
+        Command line arguments.
+        Properties from SPRING_APPLICATION_JSON (inline JSON embedded in an environment variable or system property).
+        ServletConfig init parameters or ServletContext init parameters.
+        JNDI attributes from java:comp/env
+        Java System properties (System.getProperties()).
+        OS environment variables.
+        supply the JSON as spring.application.json in a System property:
+            java -Dspring.application.json='{"name":"test"}' -jar myapp.jar
+        supply the JSON by using a command line argument, as shown in the following example:
+            java -jar myapp.jar --spring.application.json='{"name":"test"}'
+    Command Line Properties :
+        --server.port=9000
+    Using YAML :
+        Starters: spring-boot-starter
+        Loading YAML:
+            org.springframework.beans.factory.config.YamlPropertiesFactoryBean (load as Properties )
+            org.springframework.beans.factory.config.YamlMapFactoryBean (load as map )
+
+5, app
+    5.1, Customizing SpringApplication
+        SpringApplication app = new SpringApplication(Application.class);
+        app.setBannerMode(Banner.Mode.OFF);
+        app.run(args);
+    5.2, Application Events and Listeners
+        Listeners register :
+             src: SpringApplication.addListeners(…) / SpringApplicationBuilder.listeners(…)
+             META-INF/spring.factories: org.springframework.context.ApplicationListener=com.example.project.MyListener
+        Application Events sent order:
+            ApplicationStartingEvent                // sent at the start of a run but before any processing, except for the registration of listeners and initializers.
+            ApplicationEnvironmentPreparedEvent     // sent when the Environment to be used in the context is known but before the context is created.
+            ApplicationPreparedEvent                // sent just before the refresh is started but after bean definitions have been loaded.
+            ApplicationStartedEvent                 // sent after the context has been refreshed but before any application and command-line runners have been called.
+            ApplicationReadyEvent                   // sent after any application and command-line runners have been called. It indicates that the application is ready to service requests.
+            ApplicationFailedEvent                  // sent if there is an exception on startup.
+    5.3, Web Environment
+        ApplicationContext created by:
+            AnnotationConfigServletWebServerApplicationContext      // Spring MVC is present (default)
+            AnnotationConfigReactiveWebServerApplicationContext     // Spring WebFlux is present
+            AnnotationConfigApplicationContext                      // Otherwise
+        set ApplicationContext : setApplicationContextClass(…).
+    5.4, job with app start:
+        interface: org.springframework.boot.CommandLineRunner
+        interface: org.springframework.boot.ApplicationRunner
+        interface: org.springframework.core.Ordered
+        annotation: org.springframework.core.annotation.Order
+    5.5, job with app end:
+
+6, log & debug
+    debug:
+        java -jar myapp.jar --debug
+        // set debug=true in application.properties
+    config:
+        logging.level.<logger-name>=<level> // TRACE, DEBUG, INFO, WARN, ERROR, FATAL, or OFF
+        logging.level.root=WARN
+        logging.level.org.springframework.web=DEBUG
+        logging.level.org.hibernate=ERROR
+        logging.config=
+    Spring Environment :                        System Property                 Comments
+        logging.exception-conversion-word       LOG_EXCEPTION_CONVERSION_WORD   The conversion word used when logging exceptions.
+        logging.file                            LOG_FILE                        If defined, it is used in the default log configuration.
+        logging.file.max-size                   LOG_FILE_MAX_SIZE               Maximum log file size (if LOG_FILE enabled). (Only supported with the default Logback setup.)
+        logging.file.max-history                LOG_FILE_MAX_HISTORY            Maximum number of archive log files to keep (if LOG_FILE enabled). (Only supported with the default Logback setup.)
+        logging.path                            LOG_PATH                        If defined, it is used in the default log configuration.
+        logging.pattern.console                 CONSOLE_LOG_PATTERN             The log pattern to use on the console (stdout). (Only supported with the default Logback setup.)
+        logging.pattern.dateformat              LOG_DATEFORMAT_PATTERN          Appender pattern for log date format. (Only supported with the default Logback setup.)
+        logging.pattern.file                    FILE_LOG_PATTERN                The log pattern to use in a file (if LOG_FILE is enabled). (Only supported with the default Logback setup.)
+        logging.pattern.level                   LOG_LEVEL_PATTERN               The format to use when rendering the log level (default %5p). (Only supported with the default Logback setup.)
+        PID                                     PID                             The current process ID (discovered if possible and when not already defined as an OS environment variable).
+
+7, mvc
+    config:
+        spring.mvc.static-path-pattern=/resources/**
+        spring.resources.staticlocations=classpath:/asset/
+        spring.resources.chain.strategy.content.enabled=true
+        spring.resources.chain.strategy.content.paths=/**
+        spring.resources.chain.strategy.fixed.enabled=true
+        spring.resources.chain.strategy.fixed.paths=/js/lib/
+        spring.resources.chain.strategy.fixed.version=v12
+
+
+

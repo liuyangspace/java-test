@@ -5,7 +5,7 @@ import javax.servlet.ServletRequestEvent;
 /**
  * A ServletRequestListener can be implemented by the developer
  * interested in being notified of requests coming in and out of
- * scope in a web component. A request is defined as coming into
+ * scope in a web component-1. A request is defined as coming into
  * scope when it is about to enter the first servlet or filter
  * in each web application, as going out of scope when it exits
  * the last servlet or the first filter in the chain.
